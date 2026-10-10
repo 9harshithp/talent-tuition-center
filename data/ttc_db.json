@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-01",
+      "name": "Center Administrator",
+      "email": "admin@talent.org",
+      "passwordHash": "1da896a41f68f8b7108d8749d24f35ac6901112585e60a112600bd2cf663f6ed",
+      "role": "admin",
+      "status": "active",
+      "createdAt": "2026-10-10T07:57:20.094Z",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      "id": "usr-std-101",
+      "name": "Aarav Sharma",
+      "email": "aarav.sharma@gmail.com",
+      "passwordHash": "93a0ce8be02d60f6f2923ba6b557b65ee619d378f39dafd4d26e32452c5969c9",
+      "role": "student",
+      "status": "active",
+      "grade": "Class 10",
+      "phone": "+91 98860 11223",
+      "createdAt": "2026-10-10T07:57:20.095Z",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      "id": "usr-tch-01",
+      "name": "Ms. Ananya Rao",
+      "email": "ananya.rao@gmail.com",
+      "passwordHash": "2de214b972587a642b7279e87313a16eefeab5c50757e01333540266cfee5b97",
+      "role": "teacher",
+      "status": "active",
+      "subject": "Science & Physics",
+      "qualification": "M.Sc. Physics (Gold Medalist)",
+      "phone": "+91 98450 33445",
+      "createdAt": "2026-10-10T07:57:20.095Z",
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80"
+    },
+    {
+      "name": "Harshith p",
+      "email": "harshithp914@gmail.com",
+      "passwordHash": "93a0ce8be02d60f6f2923ba6b557b65ee619d378f39dafd4d26e32452c5969c9",
+      "role": "student",
+      "status": "active",
+      "grade": "Class 10",
+      "subject": "Science & Mathematics",
+      "qualification": "M.Sc. / B.Ed. Faculty",
+      "phone": "",
+      "id": "usr-stu-1791619186997",
+      "createdAt": "2026-10-10T07:59:46.997Z",
+      "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=Harshith%20p"
+    }
+  ]
+}

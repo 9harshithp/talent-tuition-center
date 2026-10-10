@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  ttc-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ttc_production_app
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - ADMIN_SECRET_KEY=${ADMIN_SECRET_KEY:-TTC-ADMIN-2026}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - NEXT_PUBLIC_GOOGLE_CLIENT_ID=${NEXT_PUBLIC_GOOGLE_CLIENT_ID}
+    volumes:
+      # Persistent Volume for Database File Storage
+      - ttc_data_volume:/app/data
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:3000/api/admin/pending-teachers || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+volumes:
+  ttc_data_volume:
+    name: ttc_db_persistent_data

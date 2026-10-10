@@ -1,0 +1,12 @@
+import { MetadataRoute } from "next";
+
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: "*",
+      allow: "/",
+      disallow: ["/api/", "/dashboard/", "/portal/"],
+    },
+    sitemap: "https://talent-tuition-center.vercel.app/sitemap.xml",
+  };
+}
