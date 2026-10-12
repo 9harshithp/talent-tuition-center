@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { NotificationProvider } from "@/context/NotificationContext";
 
@@ -94,6 +95,7 @@ export default function RootLayout({
         <LanguageProvider>
           <NotificationProvider>{children}</NotificationProvider>
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   );
