@@ -69,6 +69,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "ZsU2QyNMGPwjONiQ6bZTfvlvwOPAHgHHwpldVEOzzQY",
+  },
 };
 
 export default function RootLayout({
@@ -79,6 +82,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="ZsU2QyNMGPwjONiQ6bZTfvlvwOPAHgHHwpldVEOzzQY" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
