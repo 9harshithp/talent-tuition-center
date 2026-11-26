@@ -8,6 +8,7 @@
 
 **Learn • Grow • Excel**
 
+[![CI](https://github.com/9harshithp/talent-tuition-center/actions/workflows/ci.yml/badge.svg)](https://github.com/9harshithp/talent-tuition-center/actions/workflows/ci.yml)
 [![Live Website](https://img.shields.io/badge/Live_Website-Visit_Now-B58A36?style=for-the-badge&logo=vercel)](https://talent-tuition-center.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
