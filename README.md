@@ -94,26 +94,75 @@ It combines a public-facing educational website with dedicated Student, Teacher 
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
-### Current Preview Architecture
+Talent Tuition Center is a Next.js application featuring
+a public website and role-specific academic management portals.
 
 ```mermaid
-flowchart TD
-    U["Users"] --> W["Next.js Application"]
-    W --> P["Public Website"]
-    W --> L["Demo Login"]
-    L --> R["Browser-side role preview"]
+flowchart TB
+    U["Website Visitors"] --> F["Next.js Application - Vercel"]
+    F --> W["Public Website"]
+    F --> L["Demo Authentication"]
+
+    L --> R{"Account Role"}
     R --> S["Student Portal"]
     R --> T["Teacher Portal"]
     R --> A["Admin Portal"]
-    S --> AI["AI Doubt Solver"]
-    V["Vercel Hosting"] -. hosts .-> W
+
+    S --> D["Demo Application State"]
+    T --> D
+    A --> D
 ```
 
-The current version demonstrates the application interface and role-specific workflows using a browser-based preview.
+### Portal Navigation Workflow
 
----
+```mermaid
+flowchart TD
+    A["Open Application"] --> B["Portal Login"]
+    B --> C["Validate Demo Credentials"]
+    C --> D{"Account Role"}
+    D -->|Student| E["Student Dashboard"]
+    D -->|Teacher| F["Teacher Dashboard"]
+    D -->|Admin| G["Administrator Dashboard"]
+```
+
+### Planned Production Architecture
+
+```mermaid
+flowchart TB
+    U["Students, Teachers and Administrators"]
+    U --> F["Next.js Frontend"]
+    F --> B["Server-Side API"]
+    B --> A["Authentication and Authorization"]
+    B --> S["Academic Management Services"]
+    A --> DB[("Persistent Database")]
+    S --> DB
+```
+
+The production architecture represents planned enhancements
+to the current frontend preview.
+
+### Engineering Design
+
+| Design decision | Purpose |
+|---|---|
+| Next.js | Structured application development |
+| React components | Reusable interface elements |
+| TypeScript | Type-safe application code |
+| Tailwind CSS | Responsive styling |
+| Role-specific dashboards | Academic workflow organization |
+| Playwright | Automated browser smoke testing |
+| GitHub Actions | Continuous integration |
+| Vercel | Application hosting |
+
+### Current Implementation Status
+
+- Public website and academic program pages.
+- Student, teacher and administrator portal previews.
+- Browser-based demo authentication.
+- Automated CI and Playwright smoke tests.
+- Production authentication and database integration are planned.
 
 ## 👥 User Roles
 
@@ -228,8 +277,8 @@ Before processing real student information or payment records, the following imp
 - Admin-only access to financial information.
 - Secure AI API configuration.
 - Persistent academic records.
-- Automated testing.
-- CI/CD quality checks.
+- Expanded unit and integration test coverage.
+- Additional production deployment checks.
 
 Browser-side role switching and hidden interface elements are not substitutes for server-side authorization.
 
@@ -242,11 +291,12 @@ Browser-side role switching and hidden interface elements are not substitutes fo
 - [x] Teacher portal preview
 - [x] Administrator portal preview
 - [x] Vercel deployment
+- [x] Playwright smoke tests
+- [x] GitHub Actions continuous integration
 - [ ] Production authentication
 - [ ] Persistent database integration
 - [ ] Server-side authorization
-- [ ] Automated test suite
-- [ ] GitHub Actions CI/CD
+- [ ] Expanded unit and integration test coverage
 
 ---
 
